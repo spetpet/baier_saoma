@@ -1,0 +1,5 @@
+[HKEY_CURRENT_USER\Software\Symbol\Startup\Programs\Prog10]
+"Name"="\windows\wceload.exe"
+"Command"="\Windows\NETCFv35.wce.armv4.cab"
+"Continue"=dword:0
+"ColdBootOnly"=dword:1

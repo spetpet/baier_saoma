@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://211.97.0.4/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://211.97.0.4/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://211.97.0.4/">
+      <s:element name="wsCmd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AQuery" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AConnectString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsCmdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wsCmdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gspupload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AConnectString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carton_nbr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carton_sqe_nbr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orig_nbr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orig_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nbr_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch_nbr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gsp_array" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="gspuploadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="gspuploadResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gspupload_test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AConnectString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carton_nbr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carton_sqe_nbr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orig_nbr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orig_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nbr_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch_nbr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gsp_array" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gspupload_testResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="gspupload_testResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsCmdScalar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AQuery" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AConnectString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsCmdScalarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsCmdScalarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsGetTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AQuery" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AConnectString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsGetTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsGetTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="wsCmdSoapIn">
+    <wsdl:part name="parameters" element="tns:wsCmd" />
+  </wsdl:message>
+  <wsdl:message name="wsCmdSoapOut">
+    <wsdl:part name="parameters" element="tns:wsCmdResponse" />
+  </wsdl:message>
+  <wsdl:message name="gspuploadSoapIn">
+    <wsdl:part name="parameters" element="tns:gspupload" />
+  </wsdl:message>
+  <wsdl:message name="gspuploadSoapOut">
+    <wsdl:part name="parameters" element="tns:gspuploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="gspupload_testSoapIn">
+    <wsdl:part name="parameters" element="tns:gspupload_test" />
+  </wsdl:message>
+  <wsdl:message name="gspupload_testSoapOut">
+    <wsdl:part name="parameters" element="tns:gspupload_testResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCmdScalarSoapIn">
+    <wsdl:part name="parameters" element="tns:wsCmdScalar" />
+  </wsdl:message>
+  <wsdl:message name="wsCmdScalarSoapOut">
+    <wsdl:part name="parameters" element="tns:wsCmdScalarResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsGetTableSoapIn">
+    <wsdl:part name="parameters" element="tns:wsGetTable" />
+  </wsdl:message>
+  <wsdl:message name="wsGetTableSoapOut">
+    <wsdl:part name="parameters" element="tns:wsGetTableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceRDSoap">
+    <wsdl:operation name="wsCmd">
+      <wsdl:input message="tns:wsCmdSoapIn" />
+      <wsdl:output message="tns:wsCmdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gspupload">
+      <wsdl:input message="tns:gspuploadSoapIn" />
+      <wsdl:output message="tns:gspuploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gspupload_test">
+      <wsdl:input message="tns:gspupload_testSoapIn" />
+      <wsdl:output message="tns:gspupload_testSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsCmdScalar">
+      <wsdl:input message="tns:wsCmdScalarSoapIn" />
+      <wsdl:output message="tns:wsCmdScalarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsGetTable">
+      <wsdl:input message="tns:wsGetTableSoapIn" />
+      <wsdl:output message="tns:wsGetTableSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceRDSoap" type="tns:ServiceRDSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wsCmd">
+      <soap:operation soapAction="http://211.97.0.4/wsCmd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gspupload">
+      <soap:operation soapAction="http://211.97.0.4/gspupload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gspupload_test">
+      <soap:operation soapAction="http://211.97.0.4/gspupload_test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsCmdScalar">
+      <soap:operation soapAction="http://211.97.0.4/wsCmdScalar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsGetTable">
+      <soap:operation soapAction="http://211.97.0.4/wsGetTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceRDSoap12" type="tns:ServiceRDSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wsCmd">
+      <soap12:operation soapAction="http://211.97.0.4/wsCmd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gspupload">
+      <soap12:operation soapAction="http://211.97.0.4/gspupload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gspupload_test">
+      <soap12:operation soapAction="http://211.97.0.4/gspupload_test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsCmdScalar">
+      <soap12:operation soapAction="http://211.97.0.4/wsCmdScalar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsGetTable">
+      <soap12:operation soapAction="http://211.97.0.4/wsGetTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceRD">
+    <wsdl:port name="ServiceRDSoap" binding="tns:ServiceRDSoap">
+      <soap:address location="http://173.5.28.153/gspupload/servicerd.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceRDSoap12" binding="tns:ServiceRDSoap12">
+      <soap12:address location="http://173.5.28.153/gspupload/servicerd.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

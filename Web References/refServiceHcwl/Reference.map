@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://173.5.28.153/gspupload/servicerd.asmx?disco" filename="servicerd.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://173.5.28.153/gspupload/servicerd.asmx?wsdl" filename="servicerd.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>
