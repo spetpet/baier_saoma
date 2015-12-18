@@ -120,7 +120,7 @@ namespace smpBayerRegCode
         public void asn_query()
         {   // 校验是否混批
             string sql1 = null;
-            sql1 = "select 货箱号,批号,GSP号 from (select to_char(c.create_date_time,'yyyymmdd') 扫描日期,c.cntr_nbr 货箱号,c.batch_nbr 批号,c.gsp_nbr GSP号,v.整箱应扫,v.零头应扫,c.rcvd_shpmt_nbr ASN号, case when v.零头应扫<>0 and length(c.gsp_nbr)=20 then 0 when v.整箱应扫<>0 and length(c.gsp_nbr)=22 and substr(c.gsp_nbr,11,8)=lpad(c.batch_nbr,8,'0') ";
+            sql1 = "select 货箱号,批号,GSP号 from (select to_char(c.create_date_time,'yyyymmdd') 扫描日期,c.cntr_nbr 货箱号,c.batch_nbr 批号,c.gsp_nbr GSP号,v.整箱应扫,v.零头应扫,c.rcvd_shpmt_nbr ASN号, case when v.零头应扫<>0 and length(c.gsp_nbr)=20 then 0 when v.整箱应扫<>0 and length(c.gsp_nbr) in (22,26) and substr(c.gsp_nbr,11,8)=lpad(c.batch_nbr,8,'0') ";
             sql1 = sql1 + "then 0 else 1 end 校验结果 from c_gsp_nbr_trkg c left join v_inbound_gsp_count v on v.CASE_NBR=c.cntr_nbr left join case_hdr ch on ch.case_nbr=c.cntr_nbr where c.i_o_flag='I' and c.whse='S00' and c.stat_code='0' and ch.stat_code<='90' and c.rcvd_shpmt_nbr='";
             sql1 = sql1 +textBox4.Text+ "') where 校验结果='1'";
              
